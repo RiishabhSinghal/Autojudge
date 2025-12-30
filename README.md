@@ -5,25 +5,18 @@ This project builds an intelligent system that automatically predicts the diffic
 The system performs:
 
 Classification → Easy / Medium / Hard
-
 Regression → Numerical difficulty score
-
 Web-based inference using Flask + HTML
 
 📌 Problem Statement
 
 Online coding platforms classify problems based on difficulty, usually relying on:
-
 Human judgment
-
 User feedback and submissions
-
 This project aims to automate difficulty estimation using:
 
 Problem description
-
 Input description
-
 Output description
 
 No metadata like submissions or tags is used — purely text-based prediction.
@@ -31,23 +24,15 @@ No metadata like submissions or tags is used — purely text-based prediction.
 🚀 Features
 
 Text preprocessing and cleaning
-
 Feature engineering using:
-
 TF-IDF vectors
-
 Text length
-
 Mathematical symbol count
-
 Keyword frequencies (graph, dp, recursion, etc.)
 
 Multiple ML models trained and compared
-
 Best-performing models selected automatically
-
 Unified preprocessing + model pipeline
-
 Flask-based web interface for predictions
 
 📂 Dataset
@@ -70,27 +55,19 @@ url
 🔹 Step 1: Data Preprocessing
 
 Normalize text (handle lists, dicts, NaNs)
-
 Combine all text fields into one full_text
-
 Lowercasing and whitespace cleaning
-
 Convert targets to numeric form
 
 🔹 Step 2: Feature Engineering
 
 Text-based features
-
 TF-IDF (unigrams + bigrams)
-
 Handcrafted features
-
 Text length
-
 Count of mathematical symbols (+ - * / % = < >)
 
 Keyword frequency:
-
 graph, tree, dp, recursion, greedy,
 binary search, matrix, bfs, dfs, segment tree
 
@@ -98,17 +75,11 @@ binary search, matrix, bfs, dfs, segment tree
 Classification Models
 
 Logistic Regression
-
 Support Vector Machine (Linear SVM)
-
 Random Forest Classifier
-
 Regression Models
-
 Linear Regression
-
 Random Forest Regressor
-
 Gradient Boosting Regressor
 
 ➡️ Best models are selected based on evaluation metrics.
@@ -116,17 +87,13 @@ Gradient Boosting Regressor
 🔹 Step 4: Evaluation
 
 Classification
-
 Accuracy
-
 Confusion Matrix
-
 Precision / Recall / F1-score
 
 Regression
 
 MAE (Mean Absolute Error)
-
 RMSE (Root Mean Squared Error)
 
 🔹 Step 5: Model Saving
@@ -136,22 +103,18 @@ All preprocessing and models are saved using joblib:
 pipeline_classifier.pkl
 pipeline_regressor.pkl
 
-
 This ensures consistent preprocessing during inference.
 
 🌐 Web Interface (Flask)
 Input Fields
 
 Problem Description
-
 Input Description
-
 Output Description
 
 Output
 
 Predicted Difficulty Class (Easy / Medium / Hard)
-
 Predicted Difficulty Score
 
 🗂️ Project Structure
@@ -185,28 +148,18 @@ http://127.0.0.1:5000/
 📦 Requirements
 
 Key libraries used:
-
 Python 3.10+
-
 scikit-learn
-
 pandas
-
 numpy
-
 scipy
-
 flask
-
 joblib
-
 (Exact versions pinned in requirements.txt)
 
 📈 Results & Observations
 
 Classification accuracy ~ 50–55%
-
 Better performance on Hard problems
-
 Regression R² is modest — reflects subjectivity of difficulty
 
