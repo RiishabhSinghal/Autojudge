@@ -2,138 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Problem Difficulty Predictor</title>
+    <title>Problem Difficulty Prediction</title>
 
     <style>
         body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            padding: 40px;
         }
 
         .container {
+            max-width: 700px;
+            margin: auto;
             background: #ffffff;
-            width: 90%;
-            max-width: 900px;
-            padding: 30px 40px;
-            border-radius: 12px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
-        h2 {
+        h1 {
             text-align: center;
-            margin-bottom: 25px;
             color: #333;
         }
 
         label {
-            font-weight: 600;
+            font-weight: bold;
             display: block;
-            margin-bottom: 6px;
-            color: #444;
+            margin-top: 20px;
         }
 
         textarea {
             width: 100%;
-            padding: 12px;
-            border-radius: 8px;
+            height: 120px;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 6px;
             border: 1px solid #ccc;
             font-size: 14px;
             resize: vertical;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 5px rgba(102, 126, 234, 0.4);
-        }
-
-        .field {
-            margin-bottom: 20px;
         }
 
         button {
             width: 100%;
-            padding: 14px;
+            margin-top: 25px;
+            padding: 12px;
             font-size: 16px;
-            font-weight: 600;
+            background-color: #007bff;
+            color: #fff;
             border: none;
-            border-radius: 10px;
-            background: #667eea;
-            color: white;
+            border-radius: 6px;
             cursor: pointer;
-            transition: background 0.3s, transform 0.1s;
         }
 
         button:hover {
-            background: #5a6fdc;
-        }
-
-        button:active {
-            transform: scale(0.98);
+            background-color: #0056b3;
         }
 
         .result {
-            margin-top: 25px;
+            margin-top: 30px;
             padding: 20px;
-            border-radius: 10px;
-            background: #f5f7ff;
-            border-left: 6px solid #667eea;
-        }
-
-        .result h3 {
-            margin: 5px 0;
-            color: #333;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 13px;
-            color: #777;
+            background: #e8f4ff;
+            border-left: 5px solid #007bff;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h2>Programming Problem Difficulty Predictor</h2>
+<div class="container">
+    <h1>Problem Difficulty Predictor</h1>
 
-        <form action="/predict" method="post">
-            <div class="field">
-                <label>Problem Description</label>
-                <textarea name="description" rows="6" placeholder="Describe the problem..."></textarea>
-            </div>
+    <form action="/predict" method="POST">
 
-            <div class="field">
-                <label>Input Description</label>
-                <textarea name="input_description" rows="4" placeholder="Describe the input format..."></textarea>
-            </div>
+        <label for="problem_description">Problem Description</label>
+        <textarea name="problem_description" required></textarea>
 
-            <div class="field">
-                <label>Output Description</label>
-                <textarea name="output_description" rows="4" placeholder="Describe the output format..."></textarea>
-            </div>
+        <label for="input_description">Input Description</label>
+        <textarea name="input_description" required></textarea>
 
-            <button type="submit">Predict Difficulty</button>
-        </form>
+        <label for="output_description">Output Description</label>
+        <textarea name="output_description" required></textarea>
 
-        {% if prediction_class %}
-        <div class="result">
-            <h3>{{ prediction_class }}</h3>
-            <h3>{{ prediction_score }}</h3>
-        </div>
-        {% endif %}
+        <button type="submit">Predict</button>
+    </form>
 
-        <footer>
-            Built with Flask & Machine Learning
-        </footer>
+    {% if predicted_class is defined %}
+    <div class="result">
+        <h3>Prediction Result</h3>
+        <p><strong>Predicted Class:</strong> {{ predicted_class }}</p>
+        <p><strong>Predicted Score:</strong> {{ predicted_score }}</p>
     </div>
+    {% endif %}
+</div>
 </body>
 </html>
 
