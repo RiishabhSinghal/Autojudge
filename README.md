@@ -161,13 +161,21 @@ http://127.0.0.1:5000/
 ### 📦 Requirements
 
 Key libraries used:
+
 Python 3.10+
+
 scikit-learn
+
 pandas
+
 numpy
+
 scipy
+
 flask
+
 joblib
+
 (Exact versions pinned in requirements.txt)
 
 ### 📈 Results & Observations
