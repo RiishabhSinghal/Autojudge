@@ -120,14 +120,20 @@ Autojudge/
 
 │
 ├── app.py                  # Flask backend
+
 ├── custom_transformers.py  # Feature engineering transformers
+
 ├── templates/
 │   └── index.html          # HTML frontend
+
 │
 ├── pipeline_classifier.pkl # Saved classification pipeline
+
 ├── pipeline_regressor.pkl  # Saved regression pipeline
+
 │
 ├── requirements.txt
+
 ├── README.md
 
 ### ▶️ How to Run Locally
