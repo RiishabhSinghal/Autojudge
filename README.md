@@ -8,6 +8,7 @@ Classification → Easy / Medium / Hard
 Regression → Numerical difficulty score
 Web-based inference using Flask + HTML
 
+
 ### 📌 Problem Statement
 
 Online coding platforms classify problems based on difficulty, usually relying on:
@@ -20,6 +21,7 @@ Input description
 Output description
 
 No metadata like submissions or tags is used — purely text-based prediction.
+
 
 ### 🚀 Features
 
@@ -34,6 +36,7 @@ Multiple ML models trained and compared
 Best-performing models selected automatically
 Unified preprocessing + model pipeline
 Flask-based web interface for predictions
+
 
 ### 📂 Dataset
 
@@ -80,6 +83,7 @@ Linear Regression
 Random Forest Regressor
 Gradient Boosting Regressor
 
+
 ### ➡️ Best models are selected based on evaluation metrics.
 
 🔹 Step 4: Evaluation
@@ -103,6 +107,7 @@ pipeline_regressor.pkl
 
 This ensures consistent preprocessing during inference.
 
+
 ### 🌐 Web Interface (Flask)
 Input Fields
 
@@ -114,6 +119,7 @@ Output
 
 Predicted Difficulty Class (Easy / Medium / Hard)
 Predicted Difficulty Score
+
 
 ### 🗂️ Project Structure
 Autojudge/
@@ -136,6 +142,7 @@ Autojudge/
 
 ├── README.md
 
+
 ### ▶️ How to Run Locally
 1️⃣ Create virtual environment
 python -m venv myenv
@@ -149,6 +156,7 @@ python app.py
 
 4️⃣ Open browser
 http://127.0.0.1:5000/
+
 
 ### 📦 Requirements
 
@@ -165,16 +173,25 @@ joblib
 ### 📈 Results & Observations
 
 The classification model achieved an overall accuracy of ~53% using only textual information.
+
 Performance is strongest for Hard problems, with high recall (0.87), indicating the model reliably identifies difficult problems.
+
 Easy and Medium classes are harder to distinguish, due to overlapping language patterns and subjective difficulty definitions.
+
 The regression model achieved:
+
 MAE: 1.60
+
 RMSE: 1.92
+
 Predicting an exact difficulty score is challenging, as problem difficulty is inherently subjective and noisy.
+
 Feature engineering (keyword frequency, text length, mathematical symbols) significantly improves performance over raw TF-IDF alone.
 
 ### 👨‍💻 Author
 
 Rishabh Singhal
+
 23113127
+
 Project: Automatic Programming Problem Difficulty Prediction
