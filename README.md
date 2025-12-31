@@ -1,4 +1,4 @@
-AutoJudge: Predicting Programming Problem Difficulty
+# AutoJudge: Predicting Programming Problem Difficulty
 
 This project builds an intelligent system that automatically predicts the difficulty level and difficulty score of programming problems using only textual descriptions, similar to platforms like Codeforces, CodeChef, and Kattis.
 
@@ -48,8 +48,6 @@ problem_class   (Easy / Medium / Hard)
 problem_score   (Numerical difficulty score)
 url
 
-
-⚠️ Dataset is assumed to be pre-labeled. Dataset creation is not part of this project.
 
 🧪 Machine Learning Pipeline
 🔹 Step 1: Data Preprocessing
@@ -159,7 +157,17 @@ joblib
 
 📈 Results & Observations
 
-Classification accuracy ~ 50–55%
-Better performance on Hard problems
-Regression R² is modest — reflects subjectivity of difficulty
+The classification model achieved an overall accuracy of ~53% using only textual information.
+Performance is strongest for Hard problems, with high recall (0.87), indicating the model reliably identifies difficult problems.
+Easy and Medium classes are harder to distinguish, due to overlapping language patterns and subjective difficulty definitions.
+The regression model achieved:
+MAE: 1.60
+RMSE: 1.92
+Predicting an exact difficulty score is challenging, as problem difficulty is inherently subjective and noisy.
+Feature engineering (keyword frequency, text length, mathematical symbols) significantly improves performance over raw TF-IDF alone.
 
+👨‍💻 Author
+
+Rishabh Singhal
+23113127
+Project: Automatic Programming Problem Difficulty Prediction
