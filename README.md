@@ -8,7 +8,7 @@ Classification → Easy / Medium / Hard
 Regression → Numerical difficulty score
 Web-based inference using Flask + HTML
 
-📌 Problem Statement
+### 📌 Problem Statement
 
 Online coding platforms classify problems based on difficulty, usually relying on:
 Human judgment
@@ -21,7 +21,7 @@ Output description
 
 No metadata like submissions or tags is used — purely text-based prediction.
 
-🚀 Features
+### 🚀 Features
 
 Text preprocessing and cleaning
 Feature engineering using:
@@ -35,7 +35,7 @@ Best-performing models selected automatically
 Unified preprocessing + model pipeline
 Flask-based web interface for predictions
 
-📂 Dataset
+### 📂 Dataset
 
 Each problem contains the following fields:
 
@@ -49,7 +49,7 @@ problem_score   (Numerical difficulty score)
 url
 
 
-🧪 Machine Learning Pipeline
+### 🧪 Machine Learning Pipeline
 🔹 Step 1: Data Preprocessing
 
 Normalize text (handle lists, dicts, NaNs)
@@ -80,7 +80,7 @@ Linear Regression
 Random Forest Regressor
 Gradient Boosting Regressor
 
-➡️ Best models are selected based on evaluation metrics.
+### ➡️ Best models are selected based on evaluation metrics.
 
 🔹 Step 4: Evaluation
 
@@ -103,7 +103,7 @@ pipeline_regressor.pkl
 
 This ensures consistent preprocessing during inference.
 
-🌐 Web Interface (Flask)
+### 🌐 Web Interface (Flask)
 Input Fields
 
 Problem Description
@@ -115,7 +115,7 @@ Output
 Predicted Difficulty Class (Easy / Medium / Hard)
 Predicted Difficulty Score
 
-🗂️ Project Structure
+### 🗂️ Project Structure
 Autojudge/
 │
 ├── app.py                  # Flask backend
@@ -129,7 +129,7 @@ Autojudge/
 ├── requirements.txt
 ├── README.md
 
-▶️ How to Run Locally
+### ▶️ How to Run Locally
 1️⃣ Create virtual environment
 python -m venv myenv
 myenv\Scripts\activate   # Windows
@@ -143,7 +143,7 @@ python app.py
 4️⃣ Open browser
 http://127.0.0.1:5000/
 
-📦 Requirements
+### 📦 Requirements
 
 Key libraries used:
 Python 3.10+
@@ -155,7 +155,7 @@ flask
 joblib
 (Exact versions pinned in requirements.txt)
 
-📈 Results & Observations
+### 📈 Results & Observations
 
 The classification model achieved an overall accuracy of ~53% using only textual information.
 Performance is strongest for Hard problems, with high recall (0.87), indicating the model reliably identifies difficult problems.
@@ -166,7 +166,7 @@ RMSE: 1.92
 Predicting an exact difficulty score is challenging, as problem difficulty is inherently subjective and noisy.
 Feature engineering (keyword frequency, text length, mathematical symbols) significantly improves performance over raw TF-IDF alone.
 
-👨‍💻 Author
+### 👨‍💻 Author
 
 Rishabh Singhal
 23113127
